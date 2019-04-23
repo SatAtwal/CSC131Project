@@ -30,7 +30,7 @@ public class Tags
 	
 	public void setStatus (boolean newStatus)
 	{
-		status = newStatus
+		this.status = newStatus
 	}
 }
 
