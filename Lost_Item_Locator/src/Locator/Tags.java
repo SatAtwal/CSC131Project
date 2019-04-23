@@ -4,25 +4,27 @@ package Locator;
 public class Tags 
 {
 	private int Id;
-	private int x_coord;
-	private int y_coord;
 	private String name;
+	private Location location;
 	
-	protected void setId(int newID)
+	public void setId(int newID)
 	{
-		this.Id = newID;
+		Id = newID;
 	}
-	protected void setX(int newX)
+	
+	public void setX(int newX)
 	{
-		this.x_coord = newX;
+		latitude = newX;
 	}
-	protected void setY(int newY)
+	
+	public void setY(int newY)
 	{
-		this.y_coord = newY;
+		longitude = newY;
 	}
-	protected void setName(String newName)
+	
+	public void setName(String newName)
 	{
-		this.name = newName;
+		name = newName;
 	}
 }
 
