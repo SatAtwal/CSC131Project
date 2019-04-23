@@ -1,5 +1,5 @@
 package Locator;
-
+// Don't need ths anymore
 /**
  * Creates a Location class to store coordinates
  * 

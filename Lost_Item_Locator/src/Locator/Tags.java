@@ -10,6 +10,7 @@ public class Tags
 	private int Id;
 	private String name;
 	private static String location;
+	private boolean status;
 	
 	public static String getLocation()
 	{
@@ -24,6 +25,11 @@ public class Tags
 	public void setName(String newName)
 	{
 		name = newName;
+	}
+	
+	public void setStatus (boolean newStatus)
+	{
+		status = newStatus;
 	}
 }
 

@@ -5,7 +5,7 @@ package Locator;
  * @author Satjyot and Curtis
  *
  */
-public class Finder 
+public class Finder
 {
 	private String finderName;
 	private int finderDeviceID;
