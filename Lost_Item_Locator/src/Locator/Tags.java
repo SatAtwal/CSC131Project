@@ -1,25 +1,24 @@
 package Locator;
 
-
+/**
+ * 
+ * @author Daniel and Louis
+ *
+ */
 public class Tags 
 {
 	private int Id;
 	private String name;
-	private Location location;
+	private static String location;
+	
+	public static String getLocation()
+	{
+		return location;
+	}
 	
 	public void setId(int newID)
 	{
 		Id = newID;
-	}
-	
-	public void setX(int newX)
-	{
-		latitude = newX;
-	}
-	
-	public void setY(int newY)
-	{
-		longitude = newY;
 	}
 	
 	public void setName(String newName)

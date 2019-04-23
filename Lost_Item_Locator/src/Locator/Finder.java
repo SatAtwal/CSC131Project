@@ -1,15 +1,21 @@
 package Locator;
 
+/**
+ * 
+ * @author Satjyot and Curtis
+ *
+ */
 public class Finder 
 {
 	private String finderName;
 	private int finderDeviceID;
-	private Location location;
+	private String location;
 	
 	public void Finder(String finderName, int finderDeviceID)
 	{
 		this.finderName = finderName;
 		this.finderDeviceID = finderDeviceID;
+		location = Tags.getLocation(); 
 	}
 	
 	public String getFinderName()
@@ -20,15 +26,5 @@ public class Finder
 	public int getfinderDeviceID()
 	{
 		return finderDeviceID;
-	}
-	
-	public double getLongitude()
-	{
-		return longitude;
-	}
-	
-	public double getLatitude()
-	{
-		return latitude;
 	}
 }
