@@ -9,31 +9,41 @@ package Locator;
  * @author Tomas Albor
  * 
  */
-
-
-
 public class Owner
 {
 	private boolean itemLost;
 	private boolean itemFound;
 	
-	
+	/**
+	 * constructor
+	 */
 	public Owner()
 	{
 		this.itemLost = false;
 		this.itemFound = false;
 	}
 	
-	public void flagLost (boolean itemLost)
+	/**
+	 * sets item to lost
+	 */
+	public void flagLost()
 	{
 		this.itemLost=true;
 	}
 	
-	public boolean getLost (boolean itemLost)
+	/**
+	 * 
+	 * @param itemLost
+	 * @return boolean itemLost
+	 */
+	public boolean getLost()
 	{
 		return this.itemLost;
 	}
 	
+	/**
+	 * Indicates item is found
+	 */
 	public void found ()
 	{
 		System.out.println("\nMy object was found!"
