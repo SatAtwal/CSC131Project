@@ -50,6 +50,6 @@ public class Location
 	 */
 	public Location getLocation()
 	{
-		return new Location(latitude, longitude)
+		return new Location(latitude, longitude);
 	}
 }

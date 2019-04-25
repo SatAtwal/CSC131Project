@@ -11,6 +11,12 @@ public class Finder
 	private int finderDeviceID;
 	private String location;
 	
+	/**
+	 * Constructor to create a Finder
+	 * 
+	 * @param finderName
+	 * @param finderDeviceID
+	 */
 	public void Finder(String finderName, int finderDeviceID)
 	{
 		this.finderName = finderName;
@@ -18,13 +24,33 @@ public class Finder
 		location = Tags.getLocation(); 
 	}
 	
+	/**
+	 * gets finderName
+	 * 
+	 * @return finderName
+	 */
 	public String getFinderName()
 	{
 		return finderName;
 	}
 	
+	/**
+	 * gets finderDeviceID
+	 * 
+	 * @return finderDeviceID
+	 */
 	public int getfinderDeviceID()
 	{
 		return finderDeviceID;
+	}
+	
+	/**
+	 * gets Location
+	 * 
+	 * @return location
+	 */
+	public String getLocation()
+	{
+		return location;
 	}
 }
