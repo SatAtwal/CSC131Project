@@ -1,5 +1,6 @@
 package Locator;
 // Don't need ths anymore
+
 /**
  * Creates a Location class to store coordinates
  * 
@@ -23,12 +24,32 @@ public class Location
 	}
 	
 	/**
-	 * Returns latitude and longitude in String format
+	 * gets latitude
 	 * 
-	 * @return latitude, longitude
+	 * @return latitude
 	 */
-	public String getLocation()
+	public String getLatitude()
 	{
-		return latitude + ", " + longitude;
+		return latitude;
+	}
+	
+	/**
+	 * gets longitude
+	 * 
+	 * @return longitude
+	 */
+	public String getLongitude()
+	{
+		return longitude;
+	}
+	
+	/**
+	 * gets Location
+	 * 
+	 * @return Location object
+	 */
+	public Location getLocation()
+	{
+		return new Location(latitude, longitude);
 	}
 }
