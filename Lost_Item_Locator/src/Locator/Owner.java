@@ -12,13 +12,13 @@ public class Owner
 		this.itemFound = false;
 	}
 	
-	public void flagLost (itemLost)
+	public void flagLost (boolean itemLost)
 	{
 		this.itemLost=true;
 	}
 	
-	public boolean getLost (itemLost)
+	public boolean getLost (boolean itemLost)
 	{
-		return this.itemLost
+		return this.itemLost;
 	}
 }
