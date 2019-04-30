@@ -23,32 +23,22 @@ public class Owner
 		this.itemFound = false;
 	}
 	
-<<<<<<< HEAD
-	public void flagLost (boolean itemLost)
-=======
 	/**
 	 * sets item to lost
 	 */
 	public void flagLost()
->>>>>>> branch 'master' of https://github.com/SatAtwal/CSC131Project.git
 	{
 		this.itemLost=true;
 	}
 	
-<<<<<<< HEAD
-	public boolean getLost (boolean itemLost)
-=======
 	/**
 	 * 
 	 * @param itemLost
 	 * @return boolean itemLost
 	 */
 	public boolean getLost()
->>>>>>> branch 'master' of https://github.com/SatAtwal/CSC131Project.git
 	{
 		return this.itemLost;
-<<<<<<< HEAD
-=======
 	}
 	
 	/**
@@ -68,6 +58,5 @@ public class Owner
 		
 		
 	
->>>>>>> branch 'master' of https://github.com/SatAtwal/CSC131Project.git
 	}
 }
