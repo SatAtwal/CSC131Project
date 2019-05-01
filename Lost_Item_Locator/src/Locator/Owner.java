@@ -29,7 +29,7 @@ public class Owner
 	}
 	
 	/**
-	 * Returns status as lost
+	 * Returns if item is lost
 	 * @return itemLost
 	 */
 	public boolean status_Lost()
@@ -38,7 +38,7 @@ public class Owner
 	}
 	
 	/**
-	 * Returns status as found
+	 * Returns if item is found
 	 * @return itemFound
 	 */
 	public boolean status_Found()
@@ -47,18 +47,21 @@ public class Owner
 	}
 	
 	/**
-	 * Indicates item is found, runs when found
+	 * Indicates item is found
 	 */
 	public void found ()
 	{
-		System.out.println("\nMy object was found!"
-				+ " I just received a notification with"
-				+ "its coordinates!");
-		
 		itemLost = false;
 		itemFound = true;
-		
-		System.out.println("\nitemLost="+ itemLost
-							+ "\nitemFound="+ itemFound);
+	}
+	
+	/**
+	 * notifies owner that their item is found
+	 * @return
+	 */
+	public String notifyOwner()
+	{
+		String notification = "My object was found! I just recieved a notification with its coordinates!";
+		return notification;
 	}
 }

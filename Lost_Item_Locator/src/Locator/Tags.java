@@ -7,7 +7,7 @@ package Locator;
 public class Tags 
 {
 	private int Id;
-	private static String location;
+	private String location;
 	private boolean status;
 	
 	/**
@@ -15,11 +15,11 @@ public class Tags
 	 * @param finderDeviceID
 	 * @param location
 	 */
-	public Tags(int finderDeviceID, String location)
+	public Tags(int finderDeviceID, String location, boolean status)
 	{
 		Id = finderDeviceID;
 		this.location = location;
-		status = false;			// false means don't run finder 
+		this.status = status;			// false means don't run finder 
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class Tags
 	 * gets location
 	 * @return location
 	 */
-	public static String getLocation()
+	public String getLocation()
 	{
 		return location;
 	}

@@ -67,12 +67,5 @@ public class User
 		return O1.status_Found();
 	}
 	
-	/**
-	 * calls found on owner
-	 */
-	public void FOUND()
-	{
-		O1.found();
-	}
 }
 
