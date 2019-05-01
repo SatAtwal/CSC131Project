@@ -16,7 +16,7 @@ public class User
 	 * @param id_user
 	 * @param O
 	 */
-	public User(String x,int id_user, Owner O) 
+	public User(String x, int id_user, Owner O) 
 	{
 		name = x;
 		id = id_user;
