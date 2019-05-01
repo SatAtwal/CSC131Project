@@ -1,13 +1,10 @@
 package Locator;
 
 /** 
- * 
  * This class simulates the behaviors of the owner of the lost
- * device.  It initiates the application events and signals termination
+ * device. It initiates the application events and signals termination
  * after the object is found.
- * 
  * @author Tomas Albor
- * 
  */
 public class Owner
 {
@@ -32,17 +29,25 @@ public class Owner
 	}
 	
 	/**
-	 * 
-	 * @param itemLost
-	 * @return boolean itemLost
+	 * Returns status as lost
+	 * @return itemLost
 	 */
-	public boolean getLost()
+	public boolean status_Lost()
 	{
 		return this.itemLost;
 	}
 	
 	/**
-	 * Indicates item is found
+	 * Returns status as found
+	 * @return itemFound
+	 */
+	public boolean status_Found()
+	{
+		return this.itemFound;
+	}
+	
+	/**
+	 * Indicates item is found, runs when found
 	 */
 	public void found ()
 	{
@@ -55,8 +60,5 @@ public class Owner
 		
 		System.out.println("\nitemLost="+this.itemLost
 							+ "\nitemFound="+this.itemFound);
-		
-		
-	
 	}
 }

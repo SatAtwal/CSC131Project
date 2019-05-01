@@ -1,42 +1,26 @@
 package Locator;
 
 /**
- * 
+ * The device that finds the lost object
  * @author Satjyot and Curtis
- *
  */
 public class Finder
 {
-	private String finderName;
 	private int finderDeviceID;
 	private String location;
 	
 	/**
-	 * Constructor to create a Finder
-	 * 
-	 * @param finderName
-	 * @param finderDeviceID
+	 * Constructs using Tags Object
+	 * @param X
 	 */
-	public void Finder(String finderName, int finderDeviceID)
+	public Finder(Tags X)
 	{
-		this.finderName = finderName;
-		this.finderDeviceID = finderDeviceID;
-		location = Tags.getLocation(); 
+		this.finderDeviceID = X.getId();
+		this.location = X.getLocation(); 
 	}
 	
 	/**
-	 * gets finderName
-	 * 
-	 * @return finderName
-	 */
-	public String getFinderName()
-	{
-		return finderName;
-	}
-	
-	/**
-	 * gets finderDeviceID
-	 * 
+	 * Returns ID
 	 * @return finderDeviceID
 	 */
 	public int getfinderDeviceID()
@@ -45,8 +29,7 @@ public class Finder
 	}
 	
 	/**
-	 * gets Location
-	 * 
+	 * Returns location
 	 * @return location
 	 */
 	public String getLocation()
