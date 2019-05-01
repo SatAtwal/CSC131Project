@@ -1,6 +1,9 @@
 package locatorTest;
 
+import Locator.*;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -11,24 +14,18 @@ import org.junit.jupiter.api.Test;
 class FinderTest {
 
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
+	static void setUpBeforeClass() throws Exception 
+	{
+		
+		
 	}
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testGetFinderDeviceID() {
+		Tags tag = new Tags(1234, "X: 123 Y: 456 Z: 789", true);
+		Finder finder = new Finder(tag);
+		assertEquals("getFinderDeviceID()", 1234, finder.getfinderDeviceID());
 	}
 
 }
