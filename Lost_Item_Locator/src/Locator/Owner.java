@@ -16,8 +16,8 @@ public class Owner
 	 */
 	public Owner()
 	{
-		this.itemLost = false;
-		this.itemFound = false;
+		itemLost = false;
+		itemFound = false;
 	}
 	
 	/**
@@ -25,7 +25,7 @@ public class Owner
 	 */
 	public void flagLost()
 	{
-		this.itemLost=true;
+		itemLost=true;
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class Owner
 	 */
 	public boolean status_Lost()
 	{
-		return this.itemLost;
+		return itemLost;
 	}
 	
 	/**
@@ -43,7 +43,7 @@ public class Owner
 	 */
 	public boolean status_Found()
 	{
-		return this.itemFound;
+		return itemFound;
 	}
 	
 	/**
@@ -55,10 +55,10 @@ public class Owner
 				+ " I just received a notification with"
 				+ "its coordinates!");
 		
-		this.itemLost = false;
-		this.itemFound = true;
+		itemLost = false;
+		itemFound = true;
 		
-		System.out.println("\nitemLost="+this.itemLost
-							+ "\nitemFound="+this.itemFound);
+		System.out.println("\nitemLost="+ itemLost
+							+ "\nitemFound="+ itemFound);
 	}
 }

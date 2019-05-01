@@ -18,9 +18,9 @@ public class User
 	 */
 	public User(String x,int id_user, Owner O) 
 	{
-		this.name = x;
-		this.id = id_user;
-		this.O1 = O;
+		name = x;
+		id = id_user;
+		O1 = O;
 	}
 	
 	/**
@@ -29,7 +29,7 @@ public class User
 	 */
 	public int get_id()
 	{
-		return this.id;
+		return id;
 	}
 	
 	/**
@@ -38,7 +38,7 @@ public class User
 	 */
 	public String get_name()
 	{
-		return this.name;
+		return name;
 	}
 	
 	/**

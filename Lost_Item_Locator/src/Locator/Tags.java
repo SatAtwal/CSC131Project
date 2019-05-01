@@ -15,11 +15,11 @@ public class Tags
 	 * @param finderDeviceID
 	 * @param location
 	 */
-	public Tags(int finderDeviceID,String location)
+	public Tags(int finderDeviceID, String location)
 	{
-		this.Id = finderDeviceID;
+		Id = finderDeviceID;
 		this.location = location;
-		this.status = false;			// false means don't run finder 
+		status = false;			// false means don't run finder 
 	}
 	
 	/**
