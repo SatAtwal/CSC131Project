@@ -1,6 +1,7 @@
 package Locator;
 import java.io.*;
-import java.util.Scanner;
+import javax.swing.*; 
+
 
 /**
  * Instantiates other classes and Runs application
@@ -10,6 +11,8 @@ import java.util.Scanner;
 public class Server
 {
 
+	protected static int tagID;
+
 	public static void main(String[] args) throws IOException
 	{
 		// sets path where file will be created to user home directory
@@ -17,21 +20,25 @@ public class Server
 		String fileName = "Server.txt";
 		String absolutePath = directory + File.separator + fileName;
 		
-		// take user input to initialize owner and tag
-		Scanner input = new Scanner(System.in);
+		String userName = JOptionPane.showInputDialog("Enter you name:");
+		String tag = JOptionPane.showInputDialog("Enter your tag ID:");
 		
-		System.out.print("Enter the User's name: ");
-		String userName = input.nextLine();
+		int tagID = Integer.parseInt(tag);
 		
-		System.out.print("Enter the tag's ID: ");
-		int tagID = input.nextInt();
+		
+		
 		
 		Owner owner = new Owner();
 		User user = new User(userName, tagID, owner);
 		user.gotLost();
 		
+		GUI g = new GUI();
+		g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		g.setSize(400, 400);
+		g.setVisible(true);
+		
 		// Device is lost and tag sends signal
-		Tags T1 = new Tags(tagID,"X: 1434, Y: -122, Z: 9844", true);
+		Tags T1 = new Tags(tagID, Tags.location, false);
 		
 		// send tags to finder
 		Finder F1 = new Finder(T1); 

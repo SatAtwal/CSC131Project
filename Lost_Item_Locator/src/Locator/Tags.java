@@ -7,8 +7,8 @@ package Locator;
 public class Tags 
 {
 	private int Id;
-	private String location;
-	private boolean status;
+	static String location = "38.5461° N, 121.4509° W";
+	private boolean status = false;
 	
 	/**
 	 * Constructs a tag
@@ -18,7 +18,7 @@ public class Tags
 	public Tags(int finderDeviceID, String location, boolean status)
 	{
 		Id = finderDeviceID;
-		this.location = location;
+		Tags.location = location;
 		this.status = status;			// false means don't run finder 
 	}
 	

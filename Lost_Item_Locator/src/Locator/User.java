@@ -8,7 +8,7 @@ public class User
 {
 	private Owner O1;
 	private int id;
-	private String name;
+	private static String name;
 	
 	/**
 	 * Creates a user
@@ -36,7 +36,7 @@ public class User
 	 * gets name
 	 * @return name
 	 */
-	public String get_name()
+	public static String get_name()
 	{
 		return name;
 	}
