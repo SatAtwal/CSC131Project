@@ -58,14 +58,8 @@ public class User
 		return O1.status_Lost();
 	}
 	
-	/**
-	 * returns found status of owner's item
-	 * @return O1.status_Found()
-	 */
-	public boolean foundStatus()
-	{
-		return O1.status_Found();
-	}
+	
+	
 	
 }
 

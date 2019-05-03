@@ -8,8 +8,7 @@ package Locator;
  */
 public class Owner
 {
-	private boolean itemLost;
-	private boolean itemFound;
+	private static boolean itemLost;
 	
 	/**
 	 * constructor
@@ -17,7 +16,6 @@ public class Owner
 	public Owner()
 	{
 		itemLost = false;
-		itemFound = false;
 	}
 	
 	/**
@@ -26,6 +24,11 @@ public class Owner
 	public void flagLost()
 	{
 		itemLost=true;
+	}
+	
+	public static boolean getStatus()
+	{
+		return itemLost;
 	}
 	
 	/**
@@ -37,22 +40,14 @@ public class Owner
 		return itemLost;
 	}
 	
-	/**
-	 * Returns if item is found
-	 * @return itemFound
-	 */
-	public boolean status_Found()
-	{
-		return itemFound;
-	}
+	
 	
 	/**
 	 * Indicates item is found
 	 */
-	public void found ()
+	public static void found ()
 	{
 		itemLost = false;
-		itemFound = true;
 	}
 	
 	/**
@@ -61,7 +56,7 @@ public class Owner
 	 */
 	public String notifyOwner()
 	{
-		String notification = "My object was found! I just recieved a notification with its coordinates!";
+		String notification = "The object was found! The owner has been notified of its coordinates!";
 		return notification;
 	}
 }

@@ -1,7 +1,6 @@
 package Locator;
 import javax.swing.*;       // JButton, JTextField, Jwhatever
 import java.awt.event.*;    // Event
-import java.util.concurrent.TimeUnit;
 import java.awt.*;          // Font, colors
 
 
@@ -9,11 +8,20 @@ import java.awt.*;          // Font, colors
 public class GUI extends JFrame
 {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public int timeKiller(int n)
+	{
+	  if (n <= 2) return 1;
+	  else return timeKiller(n - 1) * timeKiller(n - 2);
+	}
 	 
 
 	private JLabel name;
 	private JButton lostButton;
-	private JLabel searching;
 	private JLabel found;
 	
 	public GUI()
@@ -24,28 +32,35 @@ public class GUI extends JFrame
 	 name = new JLabel("Hello " + User.get_name() + ", did you lose your device?");
 	 add(name);
 	 
-	 lostButton = new JButton("Yep, I lost it");
-	 lostButton.setBounds(200, 200, 40, 20);
+	 lostButton = new JButton("Yep, Search for my device");
 	 add(lostButton);
 	 
-	 searching = new JLabel("Other devices are looking for your device");
+	
+	 
 	 
 	 lostButton.addActionListener(new ActionListener()
 			 {
 		 		public void actionPerformed(ActionEvent e)
 		 		{
-		 			Tags T1 = new Tags(Server.tagID, Tags.location, false);
+		 			
 		 			lostButton.setVisible(false);
 		 			name.setVisible(false);
-		 			add(searching);
 		 			
-		 		   
-		 			found = new JLabel("Your device has been found at " + T1.getLocation());
-		 			searching.setVisible(false);
+		 			try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		 			
+		 			found = new JLabel("Your device has been found at " + Finder.getLocation());
 		 			add(found);
 		 			}
+		 		
 			 
 	}); 
+	 
+	 
 	}
 	
 }//end GUI

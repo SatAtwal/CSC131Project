@@ -25,7 +25,7 @@ public class Server
 		
 		int tagID = Integer.parseInt(tag);
 		
-		
+		Tags T1 = new Tags(tagID, Tags.location, Tags.getdeviceName(), false);
 		
 		
 		Owner owner = new Owner();
@@ -34,18 +34,19 @@ public class Server
 		
 		GUI g = new GUI();
 		g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		g.setSize(400, 400);
+	    g.setSize(400, 200);
 		g.setVisible(true);
 		
-		// Device is lost and tag sends signal
-		Tags T1 = new Tags(tagID, Tags.location, false);
+
+		
 		
 		// send tags to finder
 		Finder F1 = new Finder(T1); 
 		
 		try(FileWriter fileWriter = new FileWriter(absolutePath, true))
 	    {
-			String fileContent = "Hey you lost device " + T1.getId() +  " at " + F1.getLocation()
+			String fileContent = "The user " + User.get_name() + " lost their " + Tags.getdeviceName() + 
+	     " with ID number " + Tags.getId() + " at " + Finder.getLocation()
 								+ System.lineSeparator() + owner.notifyOwner() + System.lineSeparator()
 								+ System.lineSeparator();
 	        fileWriter.write(fileContent);
@@ -55,8 +56,8 @@ public class Server
 	        throw e;
 	    }
 	    
-		owner.found();
-		T1.setStatus(true);
+		
+		Owner.found();
 		
 	}
 

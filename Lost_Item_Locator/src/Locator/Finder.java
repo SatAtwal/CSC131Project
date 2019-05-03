@@ -7,7 +7,7 @@ package Locator;
 public class Finder
 {
 	private int finderDeviceID;
-	private String location;
+	private static String location;
 	
 	/**
 	 * Constructs using Tags Object
@@ -15,8 +15,8 @@ public class Finder
 	 */
 	public Finder(Tags X)
 	{
-		finderDeviceID = X.getId();
-		location = X.getLocation(); 
+		finderDeviceID = Tags.getId();
+		location = Tags.getLocation(); 
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class Finder
 	 * Returns location
 	 * @return location
 	 */
-	public String getLocation()
+	public static String getLocation()
 	{
 		return location;
 	}
