@@ -2,8 +2,6 @@ package locatorTest;
 
 import Locator.*;
 
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 
@@ -13,7 +11,7 @@ class FinderTest {
 
 
 	@Test
-	void testGetFinderDeviceID()
+	public void testGetFinderDeviceID()
 	{
 		Tags tag = new Tags(1234, "X: 123 Y: 456 Z: 789", "Iphone", true);
 		Finder finder = new Finder(tag);
@@ -21,7 +19,7 @@ class FinderTest {
 	}
 	
 	@Test
-	void testGetLocation()
+	public void testGetLocation()
 	{
 		Tags tag = new Tags(1234, "X: 123 Y: 456 Z: 789", "Iphone", true);
 		Finder finder = new Finder(tag);

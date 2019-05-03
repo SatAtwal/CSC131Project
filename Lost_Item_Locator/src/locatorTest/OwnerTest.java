@@ -10,7 +10,7 @@ class OwnerTest {
 
 	
 	@Test
-	void testFlagLost() 
+	public void testFlagLost() 
 	{
 		Owner owner1 = new Owner();
 		owner1.flagLost();
@@ -18,14 +18,14 @@ class OwnerTest {
 	}
 	
 	@Test
-	void testGetStatus()
+	public void testGetStatus()
 	{
 		Owner owner1 = new Owner();
 		assertEquals("getStatus()", false, Owner.getStatus());
 	}
 	
 	@Test
-	void testFound()
+	public void testFound()
 	{
 		Owner owner1 = new Owner();
 		owner1.flagLost();
@@ -34,7 +34,7 @@ class OwnerTest {
 	}
 	
 	@Test
-	void testNotifyOwner() 
+	public void testNotifyOwner() 
 	{
 		Owner owner1 = new Owner();
 		assertEquals("notifyOwner()", "The object was found! The owner has been notified of its coordinates!", owner1.notifyOwner());

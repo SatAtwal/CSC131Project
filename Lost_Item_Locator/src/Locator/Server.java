@@ -20,10 +20,11 @@ public class Server
 		
 		String userName = JOptionPane.showInputDialog("Enter you name:");
 		String tag = JOptionPane.showInputDialog("Enter your tag ID:");
+		String device = JOptionPane.showInputDialog("Enter your device:");
 		
 		int tagID = Integer.parseInt(tag);
 		
-		Tags T1 = new Tags(tagID, Tags.location, Tags.getdeviceName(), false);
+		Tags T1 = new Tags(tagID, Tags.getLocation(), device, false);
 		
 		
 		Owner owner = new Owner();
@@ -43,8 +44,8 @@ public class Server
 		
 		try(FileWriter fileWriter = new FileWriter(absolutePath, true))
 	    {
-			String fileContent = "The user " + User.get_name() + " lost their " + Tags.getdeviceName() + 
-	     " with ID number " + Tags.getId() + " at " + Finder.getLocation()
+			String fileContent = "The user " + User.get_name() + " lost their " + T1.getDeviceName() + 
+	     " with ID number " + T1.getId() + " at " + Finder.getLocation()
 								+ System.lineSeparator() + owner.notifyOwner() + System.lineSeparator()
 								+ System.lineSeparator();
 	        fileWriter.write(fileContent);

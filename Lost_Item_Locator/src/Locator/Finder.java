@@ -15,7 +15,7 @@ public class Finder
 	 */
 	public Finder(Tags X)
 	{
-		finderDeviceID = Tags.getId();
+		finderDeviceID = X.getId();
 		location = Tags.getLocation(); 
 	}
 	
