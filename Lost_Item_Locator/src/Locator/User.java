@@ -55,7 +55,7 @@ public class User
 	 */
 	public boolean lostStatus()
 	{
-		return O1.status_Lost();
+		return O1.statusLost();
 	}
 	
 	

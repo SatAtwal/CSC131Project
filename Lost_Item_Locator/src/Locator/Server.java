@@ -6,12 +6,10 @@ import javax.swing.*;
 /**
  * Instantiates other classes and Runs application
  * Does the file reads and writes
- * @author
+ * @author Curtis and Satjyot
  */
 public class Server
 {
-
-	protected static int tagID;
 
 	public static void main(String[] args) throws IOException
 	{

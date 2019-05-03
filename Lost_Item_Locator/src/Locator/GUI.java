@@ -4,13 +4,13 @@ import java.awt.event.*;    // Event
 import java.awt.*;          // Font, colors
 
 
-
+/**
+ * Creates interface to input from user and output to user
+ * @author Curtis
+ */
 public class GUI extends JFrame
 {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public int timeKiller(int n)

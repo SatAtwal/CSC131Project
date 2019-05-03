@@ -26,20 +26,23 @@ public class Owner
 		itemLost=true;
 	}
 	
+	/**
+	 * gets status of Owner class
+	 * @return itemLost
+	 */
 	public static boolean getStatus()
 	{
 		return itemLost;
 	}
 	
 	/**
-	 * Returns if item is lost
+	 * gets status of owner object
 	 * @return itemLost
 	 */
-	public boolean status_Lost()
+	public boolean statusLost()
 	{
 		return itemLost;
 	}
-	
 	
 	
 	/**
