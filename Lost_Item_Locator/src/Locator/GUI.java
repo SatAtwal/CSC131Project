@@ -24,6 +24,7 @@ public class GUI extends JFrame
 	private JButton lostButton;
 	private JLabel found;
 	
+	// creates user interface
 	public GUI()
 	{
 	 super("The Dream Team's Awesome Item Locator");	
@@ -38,6 +39,8 @@ public class GUI extends JFrame
 	
 	 
 	 
+	  
+	 // listens for the search button to be pressed
 	 lostButton.addActionListener(new ActionListener()
 			 {
 		 		public void actionPerformed(ActionEvent e)

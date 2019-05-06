@@ -18,15 +18,17 @@ public class Server
 		String fileName = "Server.txt";
 		String absolutePath = directory + File.separator + fileName;
 		
+		// asks user for input
 		String userName = JOptionPane.showInputDialog("Enter you name:");
 		String tag = JOptionPane.showInputDialog("Enter your tag ID:");
 		String device = JOptionPane.showInputDialog("Enter your device:");
+		
 		
 		int tagID = Integer.parseInt(tag);
 		
 		Tags T1 = new Tags(tagID, Tags.getLocation(), device, false);
 		
-		
+		Finder F1 = new Finder(T1); 
 		Owner owner = new Owner();
 		User user = new User(userName, tagID, owner);
 		user.gotLost();
@@ -39,9 +41,9 @@ public class Server
 
 		
 		
-		// send tags to finder
-		Finder F1 = new Finder(T1); 
-		
+		/**
+		 * writes details of lost item into file which represents the database
+		 */
 		try(FileWriter fileWriter = new FileWriter(absolutePath, true))
 	    {
 			String fileContent = "The user " + User.get_name() + " lost their " + T1.getDeviceName() + 
@@ -55,7 +57,7 @@ public class Server
 	        throw e;
 	    }
 	    
-		
+		// sets item to found
 		Owner.found();
 		
 	}

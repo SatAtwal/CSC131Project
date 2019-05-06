@@ -2,7 +2,7 @@ package Locator;
 
 /**
  * The person who uses the application
- * @author 
+ * @author Daniel and Louis
  */
 public class User 
 {
