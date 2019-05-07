@@ -6,12 +6,10 @@ import javax.swing.*;
 /**
  * Instantiates other classes and Runs application
  * Does the file reads and writes
- * @author
+ * @author Curtis and Satjyot
  */
 public class Server
 {
-
-	protected static int tagID;
 
 	public static void main(String[] args) throws IOException
 	{
@@ -20,14 +18,27 @@ public class Server
 		String fileName = "Server.txt";
 		String absolutePath = directory + File.separator + fileName;
 		
+		// asks user for input
 		String userName = JOptionPane.showInputDialog("Enter you name:");
 		String tag = JOptionPane.showInputDialog("Enter your tag ID:");
-		
-		int tagID = Integer.parseInt(tag);
-		
-		Tags T1 = new Tags(tagID, Tags.location, Tags.getdeviceName(), false);
+		String device = JOptionPane.showInputDialog("Enter your device:");
 		
 		
+		int tagID = 0;
+		try 
+		{
+			tagID = Integer.parseInt(tag);
+		}
+		catch (NumberFormatException e)
+		{
+			System.out.println("\nInvalid Tag ID\n");
+			throw e;
+		}
+		
+		
+		Tags T1 = new Tags(tagID, Tags.getLocation(), device, false);
+		
+		Finder F1 = new Finder(T1); 
 		Owner owner = new Owner();
 		@SuppressWarnings("unused")
 		User user = new User(userName, tagID, owner);
@@ -38,18 +49,16 @@ public class Server
 	    g.setSize(400, 200);
 		g.setVisible(true);
 		
-
 		
-		
-		// send tags to finder
-		Finder F1 = new Finder(T1); 
-		
+		/**
+		 * writes details of lost item into file which represents the database
+		 */
 		try(FileWriter fileWriter = new FileWriter(absolutePath, true))
 	    {
-			@SuppressWarnings("static-access")
-			String fileContent = "The user " + User.get_name() + " lost their " + T1.getdeviceName() + 
-	     " with ID number " + Tags.getId() + " at " + F1.getLocation()
-								+ System.lineSeparator() + owner.notifyOwner() + System.lineSeparator()
+			
+
+			String fileContent = "The user " + User.get_name() + " lost their " + T1.getDeviceName() + 
+			 System.lineSeparator() + owner.notifyOwner() + System.lineSeparator()
 								+ System.lineSeparator();
 	        fileWriter.write(fileContent);
 	    }
@@ -58,9 +67,8 @@ public class Server
 	        throw e;
 	    }
 	    
-		
+		// sets item to found
 		Owner.found();
 		
 	}
-
 }

@@ -6,10 +6,10 @@ package Locator;
  */
 public class Tags 
 {
-	private static int Id;
-	static String location = "38.5461° N, 121.4509° W";
-	static String deviceName = "Iphone";
-	static boolean lostStatus;
+	private int Id;
+	private static String location = "38.5461° N, 121.4509° W";
+	private String deviceName = "Iphone";
+	private boolean lostStatus;
 	
 	/**
 	 * Constructs a tag
@@ -20,15 +20,15 @@ public class Tags
 	{
 		Id = finderDeviceID;
 		Tags.location = location;
-		lostStatus = Owner.getStatus();			// false means don't run finder 
-		Tags.deviceName = deviceName;
+		this.lostStatus = lostStatus;
+		this.deviceName = deviceName;
 	}
 	
 	/**
 	 * gets ID
 	 * @return Id
 	 */
-	public static int getId()
+	public int getId()
 	{
 		return Id;
 	}
@@ -37,7 +37,7 @@ public class Tags
 	 * gets ID
 	 * @return deviceName
 	 */
-	public static String getdeviceName()
+	public String getDeviceName()
 	{
 		return deviceName;
 	}
@@ -60,6 +60,14 @@ public class Tags
 		Id = newID;
 	}
 	
+	/**
+	 * returns status of tag
+	 * @return lostStatus
+	 */
+	public boolean getStatus()
+	{
+		return lostStatus;
+	}
 	
 	/**
 	 * changes the status of the tag

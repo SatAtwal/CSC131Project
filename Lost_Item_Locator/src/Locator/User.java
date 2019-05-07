@@ -2,7 +2,7 @@ package Locator;
 
 /**
  * The person who uses the application
- * @author 
+ * @author Daniel and Louis
  */
 public class User 
 {
@@ -55,7 +55,7 @@ public class User
 	 */
 	public boolean lostStatus()
 	{
-		return O1.status_Lost();
+		return O1.statusLost();
 	}
 	
 	

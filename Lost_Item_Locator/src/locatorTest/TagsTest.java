@@ -1,34 +1,56 @@
 package locatorTest;
+import Locator.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TagsTest {
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
+	
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
+	@Test
+	public void testGetId() 
+	{
+		Tags tag1 = new Tags(1234, "12.34° N, 456.78° W", "IPad", false);
+		assertEquals("getId()", 1234, tag1.getId());
 	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
+	
+	@Test
+	public void testGetLocation()
+	{
+		assertEquals("getLocation()", "12.34° N, 456.78° W", Tags.getLocation());
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testGetDeviceName()
+	{
+		Tags tag1 = new Tags(1234, "12.34° N, 456.78° W", "IPad", false);
+		assertEquals("getDeviceName()", "IPad", tag1.getDeviceName());
 	}
-
+	
+	@Test
+	public void testSetId()
+	{
+		Tags tag1 = new Tags(1234, "12.34° N, 456.78° W", "IPad", false);
+		tag1.setId(4567);
+		assertEquals("getId()", 4567, tag1.getId());
+	}
+	
+	@Test
+	public void testGetStatus()
+	{
+		Tags tag1 = new Tags(1234, "12.34° N, 456.78° W", "IPad", true);
+		assertEquals("getStatus()", true, tag1.getStatus());
+	}
+	
+	@Test
+	public void testSetStatus()
+	{
+		Tags tag1 = new Tags(1234, "12.34° N, 456.78° W", "IPad", true);
+		Owner owner1 = new Owner();
+		tag1.setStatus();
+		assertEquals("getStatus()", false, tag1.getStatus());
+	}
+	
 }

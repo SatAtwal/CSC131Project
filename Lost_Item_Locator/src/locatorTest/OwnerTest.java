@@ -1,34 +1,43 @@
 package locatorTest;
+import Locator.*;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.Assert.*;
+
 import org.junit.jupiter.api.Test;
 
 class OwnerTest {
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
+	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testFlagLost() 
+	{
+		Owner owner1 = new Owner();
+		owner1.flagLost();
+		assertEquals("flagLost()", true, Owner.getStatus());
+	}
+	
+	@Test
+	public void testGetStatus()
+	{
+		Owner owner1 = new Owner();
+		assertEquals("getStatus()", false, Owner.getStatus());
+	}
+	
+	@Test
+	public void testFound()
+	{
+		Owner owner1 = new Owner();
+		owner1.flagLost();
+		Owner.found();
+		assertEquals("getStatus()", false, Owner.getStatus());
+	}
+	
+	@Test
+	public void testNotifyOwner() 
+	{
+		Owner owner1 = new Owner();
+		assertEquals("notifyOwner()", "The object was found! The owner has been notified of its coordinates!", owner1.notifyOwner());
 	}
 
 }

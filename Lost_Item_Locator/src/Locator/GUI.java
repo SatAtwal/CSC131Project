@@ -5,12 +5,17 @@ import java.awt.*;          // Font, colors
 
 
 
-public class GUI extends JFrame 
+
+
+
+/**
+ * Creates interface to input from user and output to user
+ * @author Curtis
+ */
+public class GUI extends JFrame
+
 {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public int timeKiller(int n)
@@ -25,6 +30,7 @@ public class GUI extends JFrame
 	private JButton foundButton;
 	private JLabel found;
 	
+	// creates user interface
 	public GUI()
 	{
 	 super("The Dream Team's Awesome Item Locator");	
@@ -39,6 +45,8 @@ public class GUI extends JFrame
 	foundButton = new JButton("I have recovered my device");
 	 
 	 
+	  
+	 // listens for the search button to be pressed
 	 lostButton.addActionListener(new ActionListener()
 			 {
 		 		public void actionPerformed(ActionEvent e)
