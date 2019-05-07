@@ -29,8 +29,9 @@ public class Server
 		
 		
 		Owner owner = new Owner();
+		@SuppressWarnings("unused")
 		User user = new User(userName, tagID, owner);
-		user.gotLost();
+		
 		
 		GUI g = new GUI();
 		g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,8 +46,9 @@ public class Server
 		
 		try(FileWriter fileWriter = new FileWriter(absolutePath, true))
 	    {
-			String fileContent = "The user " + User.get_name() + " lost their " + Tags.getdeviceName() + 
-	     " with ID number " + Tags.getId() + " at " + Finder.getLocation()
+			@SuppressWarnings("static-access")
+			String fileContent = "The user " + User.get_name() + " lost their " + T1.getdeviceName() + 
+	     " with ID number " + Tags.getId() + " at " + F1.getLocation()
 								+ System.lineSeparator() + owner.notifyOwner() + System.lineSeparator()
 								+ System.lineSeparator();
 	        fileWriter.write(fileContent);

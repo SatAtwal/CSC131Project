@@ -5,7 +5,7 @@ import java.awt.*;          // Font, colors
 
 
 
-public class GUI extends JFrame
+public class GUI extends JFrame 
 {
 	
 	/**
@@ -22,6 +22,7 @@ public class GUI extends JFrame
 
 	private JLabel name;
 	private JButton lostButton;
+	private JButton foundButton;
 	private JLabel found;
 	
 	public GUI()
@@ -35,14 +36,14 @@ public class GUI extends JFrame
 	 lostButton = new JButton("Yep, Search for my device");
 	 add(lostButton);
 	 
-	
+	foundButton = new JButton("I have recovered my device");
 	 
 	 
 	 lostButton.addActionListener(new ActionListener()
 			 {
 		 		public void actionPerformed(ActionEvent e)
 		 		{
-		 			
+		 			User.gotLost();
 		 			lostButton.setVisible(false);
 		 			name.setVisible(false);
 		 			
@@ -55,6 +56,7 @@ public class GUI extends JFrame
 		 			
 		 			found = new JLabel("Your device has been found at " + Finder.getLocation());
 		 			add(found);
+		 			add(foundButton);
 		 			}
 		 		
 			 

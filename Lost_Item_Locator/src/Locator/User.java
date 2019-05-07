@@ -6,7 +6,7 @@ package Locator;
  */
 public class User 
 {
-	private Owner O1;
+	private static Owner O1;
 	private int id;
 	private static String name;
 	
@@ -44,7 +44,7 @@ public class User
 	/**
 	 * sets owner's item to lost
 	 */
-	public void gotLost()
+	public static void gotLost()
 	{
 		O1.flagLost();
 	}
