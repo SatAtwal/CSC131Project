@@ -24,7 +24,17 @@ public class Server
 		String device = JOptionPane.showInputDialog("Enter your device:");
 		
 		
-		int tagID = Integer.parseInt(tag);
+		int tagID = 0;
+		try 
+		{
+			tagID = Integer.parseInt(tag);
+		}
+		catch (NumberFormatException e)
+		{
+			System.out.println("\nInvalid Tag ID\n");
+			throw e;
+		}
+		
 		
 		Tags T1 = new Tags(tagID, Tags.getLocation(), device, false);
 		
@@ -37,8 +47,6 @@ public class Server
 		g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    g.setSize(400, 200);
 		g.setVisible(true);
-		
-
 		
 		
 		/**
@@ -61,5 +69,4 @@ public class Server
 		Owner.found();
 		
 	}
-
 }
