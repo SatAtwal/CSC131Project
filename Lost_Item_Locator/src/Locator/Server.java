@@ -57,9 +57,10 @@ public class Server
 	    {
 			
 
+			@SuppressWarnings("static-access")
 			String fileContent = "The user " + User.get_name() + " lost their " + T1.getDeviceName() + 
-			 System.lineSeparator() + owner.notifyOwner() + System.lineSeparator()
-								+ System.lineSeparator();
+				     " with ID number " + T1.getId() + " at " + F1.getLocation() + System.lineSeparator()
+					 + owner.notifyOwner() + System.lineSeparator() + System.lineSeparator();
 	        fileWriter.write(fileContent);
 	    }
 	    catch (IOException e) 
