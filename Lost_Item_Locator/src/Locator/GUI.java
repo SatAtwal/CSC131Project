@@ -18,13 +18,7 @@ public class GUI extends JFrame
 	
 	private static final long serialVersionUID = 1L;
 
-	public int timeKiller(int n)
-	{
-	  if (n <= 2) return 1;
-	  else return timeKiller(n - 1) * timeKiller(n - 2);
-	}
-	 
-
+	
 	private JLabel name;
 	private JButton lostButton;
 	private JButton foundButton;
@@ -69,6 +63,17 @@ public class GUI extends JFrame
 		 		
 			 
 	}); 
+	 foundButton.addActionListener(new ActionListener()
+	 {
+ 		public void actionPerformed(ActionEvent e)
+ 		{
+ 			System.exit(0);
+ 			}
+ 		
+	 
+}); 
+	 
+	 
 	 
 	 
 	}
